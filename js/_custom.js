@@ -15,4 +15,9 @@ $(document).ready(function () {
     asNavFor: "#reviewsSlider",
     focusOnSelect: true,
   });
+
+  // Videos Player
+  $(".videos-video").on("click", function () {
+    $(this).children(".videos-play").hide();
+  });
 });
