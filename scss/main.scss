@@ -261,6 +261,10 @@ img {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+
+  &:first-child {
+    margin-bottom: 46px;
+  }
 }
 
 .reviews-slider {
@@ -311,6 +315,7 @@ img {
   font-size: 51px;
   line-height: 62px;
   margin-bottom: 40px;
+  text-transform: uppercase;
 }
 
 .videos-description {
@@ -386,6 +391,7 @@ img {
   font-weight: bold;
   font-size: 51px;
   line-height: 62px;
+  text-transform: uppercase;
 }
 
 .company-inner {
@@ -422,6 +428,10 @@ img {
   .reviews-items-wrapper {
     flex-direction: column;
     align-items: center;
+
+    &:first-child {
+      margin-bottom: 20px;
+    }
   }
 
   .reviews-item {
@@ -443,7 +453,7 @@ img {
 
   .videos-inner {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .videos-item {
@@ -497,18 +507,29 @@ img {
     justify-content: flex-start;
   }
 
+  .reviews-img {
+    height: 108px;
+    width: 108px;
+    max-height: 108px;
+    max-width: 108px;
+  }
+
+  .reviews-avatar {
+    height: 118px;
+    width: 118px;
+    max-height: 118px;
+    max-width: 118px;
+    min-height: 118px;
+    min-width: 118px;
+  }
+
   .videos-video {
     width: 320px;
-    margin: 0 auto;
     max-width: 300px;
   }
 
   .videos-img {
     height: auto;
-  }
-
-  .videos-item-title {
-    text-align: center;
   }
 
   .videos-title {
@@ -529,6 +550,10 @@ img {
 
   .videos-item {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   .company-item {
