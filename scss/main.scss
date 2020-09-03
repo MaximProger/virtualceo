@@ -163,7 +163,8 @@ img {
 .reviews {
   background: #000000;
   color: #fff;
-  padding: 65px 0;
+  padding-top: 65px;
+  padding-bottom: 0 !important;
 
   * {
     outline: none;
@@ -171,18 +172,15 @@ img {
 }
 
 .reviews-title {
-  font-weight: bold;
-  font-size: 51px;
-  line-height: 62px;
-  margin-bottom: 60px;
+  margin-bottom: 60px !important;
   text-transform: uppercase;
 }
 
 .reviews-item {
   width: 49%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  // display: flex;
+  // align-items: flex-start;
+  // justify-content: flex-start;
   margin-bottom: 46px;
 
   &:last-child,
@@ -191,22 +189,28 @@ img {
   }
 }
 
+.reviews-item-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 .reviews-avatar {
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  width: 165px;
-  height: 165px;
-  min-width: 165px;
-  min-height: 165px;
+  width: 109px;
+  height: 109px;
+  min-width: 109px;
+  min-height: 109px;
   margin-right: 20px;
   background: linear-gradient(124.63deg, #b2ed6a 9.13%, #60cad5 91.35%);
   img {
-    width: 155px;
-    height: 155px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    outline: 5px solid linear-gradient(124.63deg, #b2ed6a 9.13%, #60cad5 91.35%);
+    // outline: 5px solid linear-gradient(124.63deg, #b2ed6a 9.13%, #60cad5 91.35%);
   }
 }
 
@@ -219,16 +223,16 @@ img {
 
 .reviews-name {
   display: inline-block;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 24px;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 23px;
   margin-right: 10px;
 }
 
 .reviews-link {
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 20px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
   text-decoration: none;
   transition: all 0.2s linear;
   pointer-events: none;
@@ -237,6 +241,13 @@ img {
     pointer-events: inherit;
   }
 
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.reviews-name-icon {
+  transition: all 0.2s ease;
   &:hover {
     opacity: 0.7;
   }
@@ -302,6 +313,13 @@ img {
   }
 }
 
+.reviews-line {
+  background: linear-gradient(124.63deg, #b2ed6a 9.13%, #60cad5 91.35%);
+  height: 1px;
+  width: 100%;
+  margin-top: 2.5rem;
+}
+
 // Videos
 .videos {
   background: #000000;
@@ -311,11 +329,7 @@ img {
 }
 
 .videos-title {
-  font-weight: bold;
-  font-size: 51px;
-  line-height: 62px;
-  margin-bottom: 40px;
-  text-transform: uppercase;
+  margin-bottom: 40px !important;
 }
 
 .videos-description {
@@ -334,7 +348,7 @@ img {
 }
 
 .videos-item {
-  width: 32%;
+  width: 49%;
   margin-bottom: 40px;
 }
 
@@ -342,6 +356,7 @@ img {
   position: relative;
   cursor: pointer;
   transition: all 0.2s linear;
+  height: 300px;
 
   &:hover {
     .videos-play {
@@ -351,10 +366,28 @@ img {
 }
 
 .videos-img {
-  height: 200px;
   width: 100%;
-  max-height: 200px;
+  height: 100%;
   max-width: 100%;
+
+  &--preview {
+    &.active {
+      display: none;
+    }
+  }
+
+  &--video {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+  // display: none;
+
+  // &.active {
+  //   display: block;
+  // }
 }
 
 .videos-play {
@@ -373,6 +406,11 @@ img {
   margin-top: 20px;
 }
 
+.videos-item-job {
+  font-size: 16px;
+  margin-top: 7px;
+}
+
 // Company
 .company {
   padding-top: 65px;
@@ -387,10 +425,7 @@ img {
 }
 
 .company-title {
-  margin-bottom: 97px;
-  font-weight: bold;
-  font-size: 51px;
-  line-height: 62px;
+  margin-bottom: 97px !important;
   text-transform: uppercase;
 }
 
@@ -403,12 +438,26 @@ img {
 
 .company-item {
   width: 24%;
+  height: 140px;
+  max-height: 55px;
   margin-bottom: 113px;
   transition: all 0.2s linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+
+  &--white {
+    background: #fff;
+  }
 
   &:hover {
     opacity: 0.7;
   }
+}
+
+.company-img {
+  max-height: 100%;
 }
 
 @media (max-width: $tablet) {
@@ -435,10 +484,10 @@ img {
   }
 
   .reviews-item {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
     &:nth-last-child(-n + 2) {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     &:last-child {
@@ -457,7 +506,7 @@ img {
   }
 
   .videos-item {
-    width: 360px;
+    width: 500px;
   }
 
   .company {
@@ -486,12 +535,6 @@ img {
     display: inline-block;
   }
 
-  .reviews-title {
-    font-size: 24px;
-    line-height: 1;
-    margin-bottom: 30px;
-  }
-
   .reviews-item {
     width: 100%;
     flex-direction: column;
@@ -514,38 +557,9 @@ img {
     max-width: 108px;
   }
 
-  .reviews-avatar {
-    height: 118px;
-    width: 118px;
-    max-height: 118px;
-    max-width: 118px;
-    min-height: 118px;
-    min-width: 118px;
-  }
-
   .videos-video {
-    width: 320px;
-    max-width: 300px;
-  }
-
-  .videos-img {
-    height: auto;
-  }
-
-  .videos-title {
-    font-size: 24px;
-    line-height: 1;
-    margin-bottom: 30px;
-  }
-
-  .videos-description {
-    font-size: 16px;
-  }
-
-  .company-title {
-    font-size: 24px;
-    line-height: 1;
-    margin-bottom: 30px;
+    width: 100%;
+    // max-width: 300px;
   }
 
   .videos-item {
@@ -556,20 +570,12 @@ img {
     align-items: flex-start;
   }
 
+  .company-title {
+    margin-bottom: 40px !important;
+  }
+
   .company-item {
     width: 45%;
     margin-bottom: 50px;
   }
-}
-
-// Fonts
-@font-face {
-  font-family: "Futura Futuris Light";
-  src: url("../fonts/FuturaFuturisLightC.eot");
-  src: url("../fonts/FuturaFuturisLightC.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/FuturaFuturisLightC.woff") format("woff"),
-    url("../fonts/FuturaFuturisLightC.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
 }
